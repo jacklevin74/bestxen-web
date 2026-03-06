@@ -100,7 +100,7 @@ export function AccountCharts({
 
   const solXenDataset = () => [
     {
-      label: "solXEN",
+      label: "bestXEN",
       data: solXen,
       borderColor: secondaryColor,
       backgroundColor: secondaryColor,

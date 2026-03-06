@@ -223,7 +223,7 @@ export function AccountStats({
                     </div>
                   </div>
                   <div className="stat px-0 sm:px-4">
-                    <div className="stat-title">solXEN</div>
+                    <div className="stat-title">bestXEN</div>
                     <div className="stat-value text-secondary text-lg font-mono sm:text-3xl">
                       {solXenValue()}
                     </div>

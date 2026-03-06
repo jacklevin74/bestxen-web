@@ -202,7 +202,7 @@ export function LeadersTable({
                   setSortBy(LeaderBoardSort.SolXen);
                 }}
               >
-                <span>solXEN</span>
+                <span>bestXEN</span>
               </th>
             ) : null}
           </tr>
@@ -274,7 +274,7 @@ export function LeadersTable({
                       {accountType == AccountType.Solana ? (
                         <div className="flex justify-between">
                           <dt className="text-gray-400 text-sm mt-1 font-medium">
-                            solXEN
+                            bestXEN
                           </dt>
                           <dd className="text-gray-400 text-sm mt-1  font-mono">
                             {percentOfState(solXen) > 0 ? (

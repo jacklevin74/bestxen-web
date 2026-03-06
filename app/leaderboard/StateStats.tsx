@@ -168,7 +168,7 @@ export default function StateStats({
 
   return (
     <div
-      id="solxen-stats"
+      id="bestxen-stats"
       className={`grid grid-cols-2 sm:grid-cols-3 gap-4 text-center mb-2 sm:mb-3 mx-4 opacity-0 ${!isLoadingStats ? "fade-in" : ""}`}
     >
       {}
@@ -176,11 +176,11 @@ export default function StateStats({
       <StateStat
         setShowBackground={setShowBackground}
         name="solXen"
-        title="Total solXEN"
+        title="Total bestXEN"
         yAxesTitle={`Increase (per ${units})`}
         sets={[
           {
-            label: "solXEN",
+            label: "bestXEN",
             data: stateHistory.map((entry) => ({
               x: new Date(entry.createdAt),
               y: Number(entry.solXenDelta / 100_000_000n),
@@ -261,7 +261,7 @@ export default function StateStats({
         yAxesTitle="Block CU Percenage (%)"
         sets={[
           {
-            label: `solXEN | ${lastSolXenCuValue()}%`,
+            label: `bestXEN | ${lastSolXenCuValue()}%`,
             data: blockStatsHistory.map((entry) => ({
               x: new Date(entry.createdAt),
               y: entry.avgSolXenComputeUnitsPercent,

@@ -5,7 +5,7 @@
  * IDL can be found at `target/idl/sol_xen.json`.
  */
 export type SolXen = {
-  address: "7LBe4g8Q6hq8Sk1nT8tQUiz2mCHjsoQJbmZ7zCQtutuT";
+  address: "7gxpAbAbiVRefs2QPKzcXEDo2yPUjrXqPMeb4CufaL6f";
   metadata: {
     name: "solXen";
     version: "0.1.0";
@@ -232,12 +232,12 @@ export type SolXen = {
     {
       code: 6000;
       name: "mintIsAlreadyActive";
-      msg: "solXEN Mint has been already initialized";
+      msg: "bestXEN Mint has been already initialized";
     },
     {
       code: 6001;
       name: "mintIsNotActive";
-      msg: "solXEN Mint has not yet started or is over";
+      msg: "bestXEN Mint has not yet started or is over";
     },
     {
       code: 6002;

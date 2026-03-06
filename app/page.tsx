@@ -2,10 +2,7 @@
 
 import { NavBar } from "@/app/components/NavBar";
 import Link from "next/link";
-import Zoom from "react-medium-image-zoom";
-import "react-medium-image-zoom/dist/styles.css";
 import Footer from "@/app/components/Footer";
-import Image from "next/image";
 import { useStatsData } from "@/app/hooks/StateDataHook";
 import { ReactNode } from "react";
 import { MdLeaderboard } from "react-icons/md";
@@ -43,7 +40,7 @@ function Section({
 export default function Home() {
   const [stateData] = useStatsData();
 
-  const solXenValue = () => {
+  const bestXenValue = () => {
     if (!stateData?.solXen) {
       return "0";
     }
@@ -72,44 +69,53 @@ export default function Home() {
 
       <div className="hero h-[500px] bg-base-200">
         <div className="hero-content text-center">
-          <div className="mx-2 sm:mx-8max-w-[940px]">
+          <div className="mx-2 sm:mx-8 max-w-[940px]">
             <h1 className="text-4xl sm:text-5xl font-bold">
-              PROOF OF WORK MINING ON SOLANA
+              PROOF OF WORK MINING ON X1
             </h1>
             <div className="divider"></div>
             <p className="mb-5 mx-auto max-w-lg">
-              solXEN is a fairly distributed 1st principles community token
+              bestXEN is a fairly distributed 1st principles community token
               earned through PoW
-              <br className="sm:hidden"/> mining on the Solana blockchain.
+              <br className="sm:hidden" /> mining on the X1 blockchain.
             </p>
 
-              <Link href="./leaderboard" className="btn btn-primary">
-                <MdLeaderboard className="hidden sm:block"/>
-                Leaderboard
-              </Link>
+            <Link href="./leaderboard" className="btn btn-primary">
+              <MdLeaderboard className="hidden sm:block" />
+              Leaderboard
+            </Link>
 
-              <Link href="https://docs.solxen.io/"
-                    className="btn btn-secondary ml-2" target="_blank">
-                <SiGitbook className="hidden sm:block"/>
-                Docs
-              </Link>
+            <Link
+              href="https://docs.x1.xyz/"
+              className="btn btn-secondary ml-2"
+              target="_blank"
+            >
+              <SiGitbook className="hidden sm:block" />
+              Docs
+            </Link>
 
             <div className="mb-3 md:hidden"></div>
-              <Link href="https://t.me/+Z5kEez70pyQ5NTAz"
-                    className="btn btn-accent ml-2" target="_blank">
-                <TbBuildingCommunity className="hidden sm:block"/> Hashhead{" "}
-                <div className="hidden sm:inline">Community</div>
-              </Link>
+            <Link
+              href="https://t.me/+Z5kEez70pyQ5NTAz"
+              className="btn btn-accent ml-2"
+              target="_blank"
+            >
+              <TbBuildingCommunity className="hidden sm:block" /> Hashhead{" "}
+              <div className="hidden sm:inline">Community</div>
+            </Link>
 
-              <Link href="https://dexscreener.com/solana/5cyxp6xwlnzd7h2mclia6h69tiygjpthedaxjuvawime"
-                    className="btn btn-success ml-2" target="_blank">
-                <BiSolidPurchaseTag className="hidden sm:block"/> Buy solXEN
-              </Link>
-            </div>
+            <Link
+              href="https://app.xdex.xyz/swap"
+              className="btn btn-success ml-2"
+              target="_blank"
+            >
+              <BiSolidPurchaseTag className="hidden sm:block" /> Buy bestXEN
+            </Link>
+          </div>
         </div>
       </div>
 
-        <Section title="Total Supply" backgroundColor="bg-base-100">
+      <Section title="Total Supply" backgroundColor="bg-base-100">
         <div className="stats stats-vertical sm:stats-horizontal mx-auto">
           <div className="stat px-0 sm:px-4 md:px-8">
             <div className="stat-title">Hashes</div>
@@ -126,36 +132,45 @@ export default function Home() {
           </div>
 
           <div className="stat px-0 sm:px-4 md:px-8">
-            <div className="stat-title">solXEN</div>
+            <div className="stat-title">bestXEN</div>
             <div className="stat-value text-secondary sm:text-[1.6rem] md:text-4xl">
-              {solXenValue()}
+              {bestXenValue()}
             </div>
           </div>
         </div>
       </Section>
 
-      <Section title="solXEN occupied 30% of Solana's network capacity" backgroundColor="bg-base-200">
+      <Section
+        title="bestXEN — PoW Mining on X1 Blockchain"
+        backgroundColor="bg-base-200"
+      >
         <article className="prose">
           <p className="mb-4">
-            solXEN mining was limited to a predefined window of <code>30,024,000</code> blocks in 2024,
-            during which miners continuously utilized approximately <code>30%</code> of Solana&apos;s total network capacity.
+            bestXEN brings the proven PoW mining mechanics of solXEN to the{" "}
+            <Link href="https://x1.xyz" className="link" target="_blank">
+              X1 blockchain
+            </Link>
+            . X1 is a high-performance SVM-based blockchain with ~400ms block
+            times, zero-cost validator votes, and dynamic base fees.
           </p>
-          <Zoom zoomImg={{src: "/solxenusage.jpeg"}}>
-            <Image
-              alt="A diagram of mining solXEN"
-              src="/solxenusage.jpeg"
-              width={880}
-              height={356}
-            ></Image>
-          </Zoom>
           <p className="my-4">
-            X1 Labs Inc. is now developing the X1 Blockchain, a fork of the SVM codebase,
-            which will introduce{" "}
-            <Link href="https://dexscreener.com/solana/5cyxp6xwlnzd7h2mclia6h69tiygjpthedaxjuvawime"
-                  className="link" target="_blank">dynamic base fees
-            </Link>.
-            This change aims to make substantial occupation of a single program not
-            impossible but significantly more costly.
+            Connect your{" "}
+            <Link
+              href="https://chromewebstore.google.com/detail/x1-wallet/kcfmcpdmlchhbikbogddmgopmjbflnae"
+              className="link"
+              target="_blank"
+            >
+              X1 Wallet
+            </Link>{" "}
+            or{" "}
+            <Link
+              href="https://www.backpack.app/"
+              className="link"
+              target="_blank"
+            >
+              Backpack
+            </Link>{" "}
+            to start mining bestXEN on X1.
           </p>
         </article>
       </Section>
@@ -164,65 +179,82 @@ export default function Home() {
         <article className="prose">
           <p className="mb-4">
             Mining for <code>420</code> hashes involves sending a transaction
-            using the SolXen miner script. If the priority fee is high enough
-            the Solana leader as well as the rest of the validator cluster will
-            then run the 420miner script.
+            using the bestXEN miner script on X1. If the priority fee is high
+            enough the X1 leader as well as the rest of the validator cluster
+            will then run the 420miner script.
           </p>
           <p className="mb-8">
             The script leverages the cryptographic hashing algorithm Keccak256
             to find a hash containing a string with <code>420</code>/
             <code>42069</code> in it. Upon successfully finding the correct hash
-            the miner is rewarded with solXEN, as well as becoming eligible for
+            the miner is rewarded with bestXEN, as well as becoming eligible for
             XN airdrop via included ethereum address.
           </p>
-          <Zoom zoomImg={{ src: "/mining-large.jpg" }}>
-            <Image
-              alt="A diagram of mining solXEN"
-              src="/mining.jpg"
-              width={880}
-              height={356}
-            ></Image>
-          </Zoom>
         </article>
       </Section>
 
       <Section title="Tokenomics" backgroundColor="bg-base-200">
         <article className="prose">
-          <h3 className="text-lg my-4 font-bold">solXEN</h3>
+          <h3 className="text-lg my-4 font-bold">bestXEN</h3>
           <p className="mb-1">
-            A miner is rewarded solXEN for every <code>420</code> hash found
+            A miner is rewarded bestXEN for every <code>420</code> hash found
             according to this formula:
           </p>
-          <code>420hash * AMP = solXEN</code>
+          <code>420hash * AMP = bestXEN</code>
           <p className="mt-1 mb-5">where AMP is the amplification.</p>
           <p className="mb-5">
-            The AMP starts at 300 and reduces by 1 every 100.000 blocks. Given
-            that each block is 400 ms the AMP will be reduced to 0 in about 139
-            days, which makes the limited distribution period for solXEN.
+            The AMP starts at 300 and reduces by 1 every 100,000 blocks. Given
+            that each X1 block is 400 ms the AMP will be reduced to 0 in about
+            139 days, which makes the limited distribution period for bestXEN.
           </p>
           <p className="mb-5">
             The probability of finding a <code>420</code> hash is roughly 95%.
-            solXEN is directly issued upon finding a <code>420</code> hash and
+            bestXEN is directly issued upon finding a <code>420</code> hash and
             is transferable.
           </p>
 
           <h3 className="text-lg mb-4 font-bold">Super Hashes</h3>
           <p className="mb-8">
-            If <code>42069</code> is found in a hash, the amount of solXEN is
+            If <code>42069</code> is found in a hash, the amount of bestXEN is
             multiplied by 250. The probability of finding a <code>42069</code>{" "}
-            hash is roughly 0,2%, which is 250X harder to find than a{" "}
+            hash is roughly 0.2%, which is 250X harder to find than a{" "}
             <code>420</code> hash.
           </p>
-          <Zoom zoomImg={{ src: "/tokenomics.jpg" }}>
-            <Image
-              alt="A diagram of mining solXEN"
-              src="/tokenomics.jpg"
-              width={880}
-              height={356}
-            ></Image>
-          </Zoom>
         </article>
       </Section>
+
+      <Section title="Wallet Support" backgroundColor="bg-base-100">
+        <article className="prose">
+          <p className="mb-4">bestXEN on X1 supports the following wallets:</p>
+          <ul>
+            <li>
+              <Link
+                href="https://chromewebstore.google.com/detail/x1-wallet/kcfmcpdmlchhbikbogddmgopmjbflnae"
+                className="link"
+                target="_blank"
+              >
+                X1 Wallet
+              </Link>{" "}
+              — Official X1 blockchain wallet (Chrome extension)
+            </li>
+            <li>
+              <Link
+                href="https://www.backpack.app/"
+                className="link"
+                target="_blank"
+              >
+                Backpack
+              </Link>{" "}
+              — Multi-chain wallet with X1 support
+            </li>
+          </ul>
+          <p className="mt-4">
+            Click <strong>Connect Wallet</strong> in the top-right corner to get
+            started.
+          </p>
+        </article>
+      </Section>
+
       <Footer />
     </main>
   );

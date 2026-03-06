@@ -1,6 +1,7 @@
+"use client";
+
 import { FaGithub } from "react-icons/fa";
 import { MdLightMode } from "react-icons/md";
-import Image from "next/image";
 import { MdLeaderboard } from "react-icons/md";
 import { SiGitbook } from "react-icons/si";
 import { GiMiningHelmet } from "react-icons/gi";
@@ -9,34 +10,16 @@ import { useContext } from "react";
 import { ThemeContext } from "@/app/context/ThemeContext";
 import tailwindConfig from "@/tailwind.config";
 import Link from "next/link";
+import dynamic from "next/dynamic";
+
+// Dynamically import wallet button to avoid SSR issues
+const WalletConnectButton = dynamic(
+  () => import("@/app/components/WalletConnectButton"),
+  { ssr: false }
+);
 
 export const NavBar = () => {
   const { changeTheme } = useContext(ThemeContext);
-  const { theme } = useContext(ThemeContext);
-
-  const DARK_THEMES = {
-    dark: true,
-    synthwave: true,
-    forest: true,
-    aqua: true,
-    black: true,
-    luxury: true,
-    dracula: true,
-    business: true,
-    night: true,
-    coffee: true,
-    dim: true,
-    sunset: true,
-    halloween: true,
-  };
-
-  const logo = () => {
-    // @ts-ignore
-    if (DARK_THEMES[theme]) {
-      return "/solxen-white.png";
-    }
-    return "/solxen-black.png";
-  };
 
   function navItems() {
     return (
@@ -47,15 +30,15 @@ export const NavBar = () => {
           </Link>
         </li>
         <li>
-          <Link href="https://docs.solxen.io/">
+          <Link href="https://docs.x1.xyz/" target="_blank">
             <SiGitbook />
             Docs
           </Link>
         </li>
         <li>
-          <Link href="https://preview.xen.network/sol/solXEN">
+          <Link href="https://app.xdex.xyz/swap">
             <GiMiningHelmet />
-            Web Miner
+            Trade on X1
           </Link>
         </li>
         <li>
@@ -106,8 +89,8 @@ export const NavBar = () => {
           </ul>
         </div>
 
-        <a className="btn btn-link animate-none text-lg" href="/">
-          <Image src={logo()} alt="solXEN Logo" width={100} height={40} />
+        <a className="btn btn-link animate-none text-xl font-bold" href="/">
+          bestXEN
         </a>
       </div>
 
@@ -115,11 +98,12 @@ export const NavBar = () => {
         <ul className="menu menu-horizontal px-1">{navItems()}</ul>
       </div>
 
-      <div className="navbar-end">
-        <Link className=" ml-auto" href="https://github.com/FairCrypto/sol-xen">
+      <div className="navbar-end gap-2">
+        <WalletConnectButton />
+        <Link href="https://github.com/FairCrypto/sol-xen" className="hidden sm:block">
           <button className="btn btn-outline btn-accent">
-            <FaGithub size="2em"></FaGithub>
-            Get Started
+            <FaGithub size="1.5em" />
+            GitHub
           </button>
         </Link>
       </div>

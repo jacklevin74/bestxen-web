@@ -1,5 +1,5 @@
 {
-  "address": "7LBe4g8Q6hq8Sk1nT8tQUiz2mCHjsoQJbmZ7zCQtutuT",
+  "address": "7gxpAbAbiVRefs2QPKzcXEDo2yPUjrXqPMeb4CufaL6f",
   "metadata": {
     "name": "sol_xen",
     "version": "0.1.0",
@@ -196,12 +196,12 @@
     {
       "code": 6000,
       "name": "MintIsAlreadyActive",
-      "msg": "solXEN Mint has been already initialized"
+      "msg": "bestXEN Mint has been already initialized"
     },
     {
       "code": 6001,
       "name": "MintIsNotActive",
-      "msg": "solXEN Mint has not yet started or is over"
+      "msg": "bestXEN Mint has not yet started or is over"
     },
     {
       "code": 6002,
